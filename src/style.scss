@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/fonts/roboto-v20-latin_greek-regular.woff2")
+      format("woff2"),
+    url("./assets/fonts/roboto-v20-latin_greek-regular.woff") format("woff");
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  color: red;
+
+  &:hover {
+    color: blue;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
