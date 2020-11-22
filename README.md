@@ -1,3 +1,1 @@
-# React 17 + Webpack 5 Boilerplate
-
-### Based on https://github.com/rwieruch/advanced-react-webpack-babel-setup
+### Based on Robert Wieruch's repo, found here: https://github.com/rwieruch/advanced-react-webpack-babel-setup
