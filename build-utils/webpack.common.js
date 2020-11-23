@@ -1,9 +1,10 @@
-const path = require("path");
+const paths = require("./paths");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, "..", "./src/index.js"),
+  // Where webpack looks to start building the bundle
+  entry: [paths.src + "/index.js"],
   module: {
     rules: [
       {
@@ -35,11 +36,14 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "..", "./src/index.html"),
+      template: paths.src + "/index.html", // template file
+      filename: "index.html", // output file
     }),
   ],
+  // Where webpack outputs the assets and bundles
   output: {
-    path: path.resolve(__dirname, "..", "build"),
-    filename: "bundle.js",
+    path: paths.build,
+    filename: "[name].bundle.js",
+    publicPath: "/",
   },
 };

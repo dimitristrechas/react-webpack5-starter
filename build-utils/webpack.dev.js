@@ -1,4 +1,4 @@
-const path = require("path");
+const paths = require("./paths");
 const webpack = require("webpack");
 const Dotenv = require("dotenv-webpack");
 
@@ -7,12 +7,16 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new Dotenv({
-      path: path.resolve(__dirname, "..", "./.env.development"),
+      path: paths.root + "/.env.development",
     }),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, "..", "./build"),
+    historyApiFallback: true,
+    contentBase: paths.build,
+    open: true,
+    compress: true,
     hot: true,
+    port: 8080,
   },
   devtool: "eval-source-map",
 };
